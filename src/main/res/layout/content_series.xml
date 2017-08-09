@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#000"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.mufasa.j_max.series"
+    tools:showIn="@layout/activity_series">
+
+    <TextView
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+        android:textColor="@color/colorAccent"
+
+        android:id="@+id/txtLabelS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="@string/txtLabelS" />
+
+    <EditText
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+
+        android:id="@+id/txtSearchS"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/txtSearchS"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/txtLabelS"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btnFindS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnFindS"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp"
+        android:layout_alignBaseline="@+id/txtSearchS"
+        android:layout_alignBottom="@+id/txtSearchS"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:textColor="#fff"
+
+        android:id="@+id/txtResultS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/btnFindS"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnPlaceS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnPlaceS"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_alignBaseline="@+id/btnCheckOutS"
+        android:layout_alignBottom="@+id/btnCheckOutS"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btnCheckOutS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnCheckS"
+        android:layout_below="@+id/txtResultS"
+        android:layout_toRightOf="@+id/txtSearchS"
+        android:layout_toEndOf="@+id/txtSearchS"
+        android:layout_marginTop="28dp" />
+
+    <TextView
+        android:id="@+id/txtCostS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnPlaceS"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:text="TextView" />
+
+</RelativeLayout>

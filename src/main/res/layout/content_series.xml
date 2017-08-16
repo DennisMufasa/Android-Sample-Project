@@ -89,6 +89,6 @@
         android:layout_below="@+id/btnPlaceS"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="53dp"
-        android:text="TextView" />
+        android:text="" />
 
 </RelativeLayout>

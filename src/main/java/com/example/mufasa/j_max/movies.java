@@ -2,7 +2,6 @@ package com.example.mufasa.j_max;
 
 import android.content.Intent;
 import android.graphics.Paint;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,8 +17,6 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.TextHttpResponseHandler;
 
-import java.util.List;
-
 import cz.msebera.android.httpclient.Header;
 
 public class movies extends AppCompatActivity {
@@ -29,7 +26,7 @@ public class movies extends AppCompatActivity {
     Button btnFind,btnPlace,btnCheckOut;
 
     //ListView lstView;
-
+    AsyncHttpClient sync;
     RequestParams params;
     String result;
 
@@ -58,12 +55,11 @@ public class movies extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                AsyncHttpClient sync= new AsyncHttpClient();
+                sync= new AsyncHttpClient();
                  params=new RequestParams();
                 params.put("search",txtSearch.getText().toString());
 
-
-                sync.post("http://appbeesafrica.com/Dennis/jmovies.php",params, new TextHttpResponseHandler() {
+                sync.post("http://localhost/mufasa/jmovies.php",params, new TextHttpResponseHandler() {
                     @Override
                     public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                         Toast.makeText(movies.this, "Error in Connecting", Toast.LENGTH_SHORT).show();
@@ -92,10 +88,6 @@ public class movies extends AppCompatActivity {
        btnPlace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-
-
 
                 txtSearch.setText("");
                 Toast.makeText(movies.this, "Added to Cart", Toast.LENGTH_SHORT).show();

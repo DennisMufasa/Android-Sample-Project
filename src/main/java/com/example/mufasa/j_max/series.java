@@ -28,6 +28,8 @@ public class series extends AppCompatActivity {
     Button btnFindS,btnPlaceS,btnCheckOutS;
     //ListView lstView;
 
+    AsyncHttpClient sync;
+    RequestParams params;
     String result;
 
     @Override
@@ -53,13 +55,13 @@ public class series extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                AsyncHttpClient sync= new AsyncHttpClient();
+                sync= new AsyncHttpClient();
 
-                RequestParams params= new RequestParams();
+                params= new RequestParams();
 
                 params.put("search",txtSearchS.getText().toString());
 
-                sync.post("http://appbeesafrica.com/Dennis/jseries.php", params, new TextHttpResponseHandler() {
+                sync.post("http://localhost/mufasa/jseries.php", params, new TextHttpResponseHandler() {
                     @Override
                     public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                         Toast.makeText(series.this, "Error in Connection", Toast.LENGTH_SHORT).show();
@@ -83,7 +85,6 @@ public class series extends AppCompatActivity {
         btnPlaceS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
 
                 txtSearchS.setText("");
                 Toast.makeText(series.this, "Added to Cart", Toast.LENGTH_SHORT).show();

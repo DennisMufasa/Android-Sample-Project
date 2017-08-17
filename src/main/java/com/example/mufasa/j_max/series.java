@@ -49,8 +49,6 @@ public class series extends AppCompatActivity {
 
       //  lstView=(ListView)findViewById(R.id.lstSeries);
 
-
-
         btnFindS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,7 +59,7 @@ public class series extends AppCompatActivity {
 
                 params.put("search",txtSearchS.getText().toString());
 
-                sync.post("http://localhost/mufasa/jseries.php", params, new TextHttpResponseHandler() {
+                sync.post("http://192.168.100.18/mufasa/jseries.php", params, new TextHttpResponseHandler() {
                     @Override
                     public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                         Toast.makeText(series.this, "Error in Connection", Toast.LENGTH_SHORT).show();
@@ -72,7 +70,7 @@ public class series extends AppCompatActivity {
 
                         if (responseString.toString().contains("found")){
 
-                            result=responseString.toString();
+                            result=txtSearchS.getText().toString();
                             txtResultS.setText(result+" was found");
                         }else{
                             Toast.makeText(series.this, "Series was not found.", Toast.LENGTH_SHORT).show();
@@ -94,7 +92,8 @@ public class series extends AppCompatActivity {
         btnCheckOutS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("smsto" + "+254737030953");
+
+                Uri uri = Uri.parse("smsto:" + "+254737030953");
                 Intent text = new Intent(Intent.ACTION_SENDTO, uri);
                 text.putExtra("sms_body", result);
                 startActivity(text);

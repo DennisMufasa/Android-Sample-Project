@@ -59,7 +59,7 @@ public class movies extends AppCompatActivity {
                  params=new RequestParams();
                 params.put("search",txtSearch.getText().toString());
 
-                sync.post("http://localhost/mufasa/jmovies.php",params, new TextHttpResponseHandler() {
+                sync.post("http://192.168.100.18/mufasa/jmovies.php",params, new TextHttpResponseHandler() {
                     @Override
                     public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                         Toast.makeText(movies.this, "Error in Connecting", Toast.LENGTH_SHORT).show();
@@ -72,7 +72,7 @@ public class movies extends AppCompatActivity {
                         if (responseString.contains("found")){
                            // Toast.makeText(movies.this, "Connection Successful", Toast.LENGTH_SHORT).show();
 
-                             result=responseString.toString();
+                            result=txtSearch.getText().toString();
                             txtResult.setText(result+" was found");
                             count++;
 
